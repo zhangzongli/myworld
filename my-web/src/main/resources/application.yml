@@ -1,0 +1,169 @@
+spring:
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always
+  jackson:
+    time-zone: 'Asia/Shanghai'
+  http:
+    multipart:
+      enabled: true
+      maxFileSize: 500KB
+  cors: # 跨域
+    enabled: true
+    paths:
+      - /api/**
+    exposed-headers:
+      - x-auth-token
+    allowed-origins:
+      - '*'
+    allowed-methods:
+      - '*'
+
+swagger:
+  title: 汪小喵-Web
+  description: 汪汪汪
+  version: 0.1.0
+  base-package: com.wang.xiao.miao
+
+---
+
+spring:
+  profiles: dev
+  cache:
+    type: simple
+  session:
+    store-type: hash_map
+  h2:
+    console:
+      enabled: true
+      path: /console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/Desktop/h2/myworld
+    username: sa
+    password: sa
+  jpa:
+    properties:
+      javax.persistence.schema-generation.scripts.action: create
+      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+
+server:
+  session:
+    timeout: 900 # 15*60
+  port: 8084
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    com.tsingyun: debug
+#
+#shiro:
+#  loginUrl: /login
+#  chain:
+#    enabled: false
+
+swagger:
+  enabled: true
+
+#flyway:
+#  enabled: false
+
+---
+
+#spring:
+#  profiles: prod
+#  cache:
+#    type: simple
+#  session:
+#    store-type: jdbc
+#    type: header
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.jdbc.Driver
+#    filters: stat
+#    maxActive: 20
+#    initialSize: 1
+#    maxWait: 60000
+#    minIdle: 1
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: select 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxOpenPreparedStatements: 20
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#
+#server:
+#  session:
+#    timeout: 604800
+#
+#logging:
+#  level:
+#    root: WARN
+#    com.tsingyun: INFO
+#    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: ERROR
+#
+#flyway:
+#  enabled: true
+
+---
+
+#spring:
+#  profiles: docker
+#  datasource:
+#    url: jdbc:mysql://www.tsingcon.com:3306/hpvm?useSSL=false
+#    username: hpvm
+#    password: hpvm
+#  rabbitmq:
+#      host: 113.208.115.182
+#      port: 5672
+#      username: guest
+#      password: guest
+#
+#swagger:
+#  enabled : true
+#shiro:
+#  chain:
+#    enabled: false
+
+---
+
+#spring:
+#  profiles: local
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/hpvm?useSSL=false
+#    username: hpvm
+#    password: hpvm
+#  rabbitmq:
+#      host: 113.208.115.182
+#      port: 5672
+#      username: guest
+#      password: guest
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+##    properties:
+##      javax.persistence.schema-generation.scripts.action: create
+##      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+#
+#logging:
+#  level:
+#    org.hibernate.tool.hbm2ddl: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type: TRACE
+#
+#swagger:
+#  enabled: true
+#shiro:
+#  chain:
+#    enabled: false
+#
+#flyway:
+#  enabled: false

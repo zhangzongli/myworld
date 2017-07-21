@@ -1,0 +1,5 @@
+rootProject.name = 'myworld'
+include 'my-web'
+include 'my-data'
+include 'my-common'
+
