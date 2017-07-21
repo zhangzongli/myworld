@@ -16,6 +16,7 @@ public class Test {
 
     private String valueStr;
 
+    private String name;
 
     public String getId() {
         return id;
@@ -31,6 +32,14 @@ public class Test {
 
     public void setValueStr(String valueStr) {
         this.valueStr = valueStr;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }

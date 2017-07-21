@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: local
   output:
     ansi:
       enabled: always
@@ -134,31 +134,31 @@ swagger:
 
 ---
 
-#spring:
-#  profiles: local
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/hpvm?useSSL=false
-#    username: hpvm
-#    password: hpvm
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false
+    username: root
+    password: 123456
 #  rabbitmq:
 #      host: 113.208.115.182
 #      port: 5672
 #      username: guest
 #      password: guest
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-##    properties:
-##      javax.persistence.schema-generation.scripts.action: create
-##      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
-#
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+#    properties:
+#      javax.persistence.schema-generation.scripts.action: create
+#      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+
 #logging:
 #  level:
 #    org.hibernate.tool.hbm2ddl: DEBUG
 #    org.hibernate.SQL: DEBUG
 #    org.hibernate.type: TRACE
-#
+
 #swagger:
 #  enabled: true
 #shiro:
