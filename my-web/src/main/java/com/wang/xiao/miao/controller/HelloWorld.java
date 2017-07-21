@@ -20,6 +20,11 @@ public class HelloWorld {
 
     @RequestMapping("/hello")
     public List<Test> index(){
-        return helloService.getTestList();
+        return helloService.getTestList("1");
+    }
+
+    @RequestMapping("/hello1")
+    public List<Test> index1(){
+        return helloService.getTestList("2");
     }
 }

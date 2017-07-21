@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface HelloService {
 
-    List<Test> getTestList();
+    List<Test> getTestList(String id);
 }

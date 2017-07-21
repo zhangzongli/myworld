@@ -117,15 +117,15 @@ swagger:
 #spring:
 #  profiles: docker
 #  datasource:
-#    url: jdbc:mysql://www.tsingcon.com:3306/hpvm?useSSL=false
-#    username: hpvm
-#    password: hpvm
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false
+#    username: root
+#    password: 123456
 #  rabbitmq:
 #      host: 113.208.115.182
 #      port: 5672
 #      username: guest
 #      password: guest
-#
+
 #swagger:
 #  enabled : true
 #shiro:

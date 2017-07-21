@@ -16,8 +16,8 @@ public class HelloServiceImpl implements HelloService {
     @Autowired
     private TestRepository testRepository;
 
-    public List<Test> getTestList() {
-        List<Test> testList = testRepository.getTestList();
+    public List<Test> getTestList(String id) {
+        List<Test> testList = testRepository.getTestList(id);
         return testList;
     }
 }
