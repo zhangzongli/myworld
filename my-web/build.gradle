@@ -19,6 +19,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-cache')
     compile('org.springframework.boot:spring-boot-devtools')
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter") {
+        exclude group: 'org.springframework.boot:spring-boot-starter-logging'//排除组织依赖
+//        exclude module: 'my-web'//排除模块依赖
+    }
     compile("org.springframework.boot:spring-boot-starter-tomcat")
 //    compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -42,4 +46,7 @@ dependencies {
 
 //    compile('org.apache.poi:poi:3.9')
 //    compile('org.apache.poi:poi-ooxml:3.9')
+
+    //日志
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j'
 }
