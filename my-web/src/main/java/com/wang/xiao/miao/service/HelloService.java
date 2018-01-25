@@ -1,6 +1,6 @@
 package com.wang.xiao.miao.service;
 
-import com.wang.xiao.miao.domain.Test;
+import com.wang.xiao.miao.domain.UserInfo;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface HelloService {
 
-    List<Test> getTestList(String id);
+//    List<UserInfo> getTestList(String id);
 }

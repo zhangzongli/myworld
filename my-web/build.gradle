@@ -19,34 +19,24 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-cache')
     compile('org.springframework.boot:spring-boot-devtools')
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter") {
-        exclude group: 'org.springframework.boot:spring-boot-starter-logging'//排除组织依赖
-//        exclude module: 'my-web'//排除模块依赖
-    }
+    compile("org.springframework.boot:spring-boot-starter")
+//        exclude group: 'org.springframework.boot:spring-boot-starter-logging'//排除组织依赖
+////        exclude module: 'my-web'//排除模块依赖
+//    }
     compile("org.springframework.boot:spring-boot-starter-tomcat")
-//    compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('com.h2database:h2')
-
-//    compile('org.springframework.boot:spring-boot-starter-amqp')
-
-//    compile('org.flywaydb:flyway-core:4.0.3')
-//    compile('org.springframework.session:spring-session-jdbc:1.2.2.RELEASE')
-
-//    compile("com.tsingyun.boot:shiro-spring-boot-web-starter:${tsingyunBootVersion}")
-//    compile("com.tsingyun.boot:session-spring-boot-web-starter:${tsingyunBootVersion}")
-//    compile("com.tsingyun.boot:swagger-spring-boot-starter:${tsingyunBootVersion}")
-//    compile("com.tsingyun.boot:cors-spring-boot-starter:${tsingyunBootVersion}")
-
-//    compile('io.springfox:springfox-swagger2:2.6.1')
-//    compile('io.springfox:springfox-swagger-ui:2.6.1')
 
 //    compile('com.alibaba:druid:1.0.27')
     runtime('mysql:mysql-connector-java')
 
-//    compile('org.apache.poi:poi:3.9')
-//    compile('org.apache.poi:poi-ooxml:3.9')
-
     //日志
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j'
+//    compile("org.springframework.boot:spring-boot-starter-log4j")
+
+    //swagger
+    compile("com.tsingyun.boot:swagger-spring-boot-starter:${tsingyunBootVersion}")
+    
+    //shiro
+    compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
 }
