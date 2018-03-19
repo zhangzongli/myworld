@@ -1,9 +1,10 @@
 spring:
   profiles:
-    active: local
+    active: dev
   output:
     ansi:
       enabled: always
+  debug: true
   jackson:
     time-zone: 'Asia/Shanghai'
   http:
@@ -20,6 +21,8 @@ spring:
       - '*'
     allowed-methods:
       - '*'
+  session:
+    store-type: none
 
 swagger:
   title: 汪小喵-Web
@@ -35,24 +38,24 @@ spring:
     type: simple
   session:
     store-type: hash_map
-  h2:
-    console:
-      enabled: true
-      path: /console
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/Desktop/h2/myworld
-    username: sa
-    password: sa
-  jpa:
-    properties:
-      javax.persistence.schema-generation.scripts.action: create
-      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+#  h2:
+#    console:
+#      enabled: true
+#      path: /console
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:file:~/Desktop/h2/myworld
+#    username: sa
+#    password: sa
+#  jpa:
+#    properties:
+#      javax.persistence.schema-generation.scripts.action: create
+#      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
 
-server:
-  session:
-    timeout: 900 # 15*60
-  port: 8084
+#server:
+#  session:
+#    timeout: 900 # 15*60
+#  port: 8084
 
 logging:
   level:
@@ -64,8 +67,8 @@ logging:
 #  chain:
 #    enabled: false
 
-swagger:
-  enabled: true
+#swagger:
+#  enabled: true
 
 #flyway:
 #  enabled: false
@@ -137,7 +140,7 @@ swagger:
 spring:
   profiles: local
   datasource:
-    url: jdbc:mysql://localhost:3306/test?useSSL=false
+    url: jdbc:mysql://192.168.1.103:3306/test?useSSL=false&autoReconnect=true
     username: root
     password: 123456
 #  rabbitmq:
@@ -147,11 +150,12 @@ spring:
 #      password: guest
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
-#    properties:
-#      javax.persistence.schema-generation.scripts.action: create
-#      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+    properties:
+      javax.persistence.schema-generation.scripts.action: create
+      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
+
 
 #logging:
 #  level:
@@ -159,8 +163,8 @@ spring:
 #    org.hibernate.SQL: DEBUG
 #    org.hibernate.type: TRACE
 
-#swagger:
-#  enabled: true
+swagger:
+  enabled: true
 #shiro:
 #  chain:
 #    enabled: false

@@ -4,7 +4,7 @@ buildscript {
         JAVA_GRADLE = "$rootDir/gradle/java.gradle"
         COMMON_GRADLE = "$rootDir/gradle/common.gradle"
 
-        springBootVersion = '1.4.3.RELEASE'
+        springBootVersion = '1.5.2.RELEASE'
         springShiroVersion = '1.4.0-RC2'
         tsingyunBootVersion = '1.0.9'
     }
