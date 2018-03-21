@@ -1,7 +1,7 @@
 package com.wang.xiao.miao.controller;
 
 import com.wang.xiao.miao.domain.Test;
-import com.wang.xiao.miao.service.HelloService;
+import com.wang.xiao.miao.service.HelloServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.List;
 public class HelloWorld {
 
     @Autowired
-    private HelloService helloService;
+    private HelloServiceImpl helloService;
 
     @ApiOperation(value = "根据电站ID和时间范围获取电站告警记录", notes = "根据电站ID和时间范围获取电站告警记录")
     @RequestMapping("/hello")
@@ -29,5 +29,9 @@ public class HelloWorld {
     @RequestMapping("/hello1")
     public List<Test> index1(){
         return helloService.getTestList("2");
+    }
+
+    public void start() {
+
     }
 }
