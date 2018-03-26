@@ -136,19 +136,19 @@ swagger:
 
 spring:
   profiles: local
-  datasource:
-    url: jdbc:mysql://localhost:3306/test?useSSL=false
-    username: root
-    password: 123456
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false
+#    username: root
+#    password: 123456
 #  rabbitmq:
 #      host: 113.208.115.182
 #      port: 5672
 #      username: guest
 #      password: guest
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    show-sql: true
 #    properties:
 #      javax.persistence.schema-generation.scripts.action: create
 #      javax.persistence.schema-generation.scripts.create-target: build/schema.sql
